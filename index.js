@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 
 client.on('ready', () => {
-    client.user.setActivity('bot en heroku', {type: 'WATCHING'});
+    client.user.setActivity('Molestar a los demás', {type: 'GAMING'});
     console.log('Listo!');
 });
 
