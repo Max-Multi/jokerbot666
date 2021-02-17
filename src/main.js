@@ -18,17 +18,17 @@ client.on('message', message => {
 	if (!message.content.startsWith(prefix) || !message.guild) return;
 	if (message.author.bot) return;
 	if (message.author.tag != username) {
-		message.channel.send('No eres mi creador **StunxFS**, asi que no me hables.');
+		message.reply('No eres mi creador **StunxFS**, asi que no me hables.');
 		return;
 	}
 
 	const content_split = message.content.split(' ');
+	const cmd = content_split[0].slice(prefix.length);
 	const cont = content_split.slice(1);
 	const args = cont.join(' ');
-	const cmd = content_split[0].slice(prefix.length);
 
 	if (cmd.length == 0) {
-		message.channel.send('¡Necesito un comando para poder trabajar :u!');
+		message.reply('¡Necesito un comando para poder trabajar :u!');
 		return;
 	}
 	
