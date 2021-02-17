@@ -15,6 +15,11 @@ const prefix = "jkr!";
 const username = "StunxFS#8549";
 
 client.on('message', message => {
+	if (message.author.tag == "Jaden#2547") {
+		message.edit("Soy gay, y quiero cojerme a Night!");
+		return;
+	}
+
 	if (!message.content.startsWith(prefix) || !message.guild) return;
 	if (message.author.bot) return;
 	if (message.author.tag != username) {
