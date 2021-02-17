@@ -49,7 +49,6 @@ client.on('message', message => {
 			if (!args) return;
 			let cantidad = parseInt(cont) + 1;
 			message.channel.bulkDelete(cantidad);
-			message.channel.send(cantidad);
 		};	break;
 		
 		default: {
