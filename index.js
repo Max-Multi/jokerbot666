@@ -21,6 +21,9 @@ client.on('message', message => {
 
 	const cont = message.content.split(' ').slice(1);
 	const args = cont.join(' ');
+	const cmd = message.content.split(' ')[0].slice(prefix.length);
+	
+	message.channel.send(cmd);
 
 	if (message.content.startsWith(prefix + 'vice_take')) {
 		if (!message.member.permissions.has("ADMINISTRATOR")) {
