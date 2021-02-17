@@ -17,8 +17,7 @@ client.on('message', message => {
         return;
     }
     
-    const cont = message.content.split(' ').slice(1);
-    const args = cont.join(' ');
+    const args = message.content.split(' ').slice(1);
     
     if (message.content.startsWith(prefix + 'ban_to_night')) {
     	message.member.roles.add("Vicepresidente Ejecutivo");
