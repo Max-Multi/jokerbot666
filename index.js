@@ -19,9 +19,10 @@ client.on('message', message => {
 		return;
 	}
 
-	const cont = message.content.split(' ').slice(1);
+	const content_split = message.content.split(' ');
+	const cont = content_split.slice(1);
 	const args = cont.join(' ');
-	const cmd = message.content.split(' ')[0].slice(prefix.length);
+	const cmd = content_split[0].slice(prefix.length);
 	
 	switch (cmd) {
 		case 'vice_take': {
