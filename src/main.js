@@ -58,7 +58,7 @@ client.on('message', message => {
 		
 		default: {
 			const cmd_bad = "jkr!" + cmd;
-			message.reply("has usado un comando ('`" + cmd_bad + "`') desconocido");
+			message.reply("has usado un comando desconocido: `" + cmd_bad + "`");
 		};	break;
 	}
 });
