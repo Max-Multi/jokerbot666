@@ -26,6 +26,11 @@ client.on('message', message => {
 	const cont = content_split.slice(1);
 	const args = cont.join(' ');
 	const cmd = content_split[0].slice(prefix.length);
+
+	if (cmd.length == 0) {
+		message.channel.send('¡Necesito un comando para poder trabajar :u!');
+		return;
+	}
 	
 	switch (cmd) {
 		/*case 'vice_take': {
