@@ -16,9 +16,9 @@ client.on('message', message => {
         message.channel.send('No eres mi dueño (StunxFS), asi que no me hables.');
         return;
     }
-    
+   
 	const cont = message.content.split(' ').slice(1);
-    const args = message.content.split(' ');
+    const args = cont.join(' ');
     
     if (message.content.startsWith(prefix + 'vice_take')) {
 	if (!message.member.permissions.has("ADMINISTRATOR")) {
