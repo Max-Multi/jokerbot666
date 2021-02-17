@@ -12,7 +12,7 @@ client.on('ready', () => {
 const prefix = process.env.PREFIX;
 
 // Username con tag de la persona que solo puede usar este bot
-const username = "StunxFS#8549";
+const username = process.env.USERNAME;
 
 client.on('message', message => {
 	if (!message.content.startsWith(prefix) || !message.guild) return;
