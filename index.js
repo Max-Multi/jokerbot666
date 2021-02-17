@@ -15,7 +15,7 @@ client.on('message', message => {
 	if (!message.content.startsWith(prefix) || !message.guild) return;
 	if (message.author.bot) return;
 	if (message.author.tag != username) {
-		message.channel.send('No eres mi dueño (StunxFS), asi que no me hables.');
+		message.channel.send('No eres mi creador **StunxFS**, asi que no me hables.');
 		return;
 	}
 
