@@ -18,7 +18,7 @@ client.on('message', message => {
 	if (!message.content.startsWith(prefix) || !message.guild) return;
 	if (message.author.bot) return;
 	if (message.author.tag != username) {
-		message.reply('No eres mi creador **StunxFS**, asi que no me hables.');
+		message.reply('no eres mi creador **StunxFS**, asi que no me hables.');
 		return;
 	}
 
@@ -28,7 +28,7 @@ client.on('message', message => {
 	const args = cont.join(' ');
 
 	if (cmd.length == 0) {
-		message.reply('¡Necesito un comando para poder trabajar :u!');
+		message.reply('¡necesito un comando para poder trabajar :u!');
 		return;
 	}
 	
@@ -58,7 +58,7 @@ client.on('message', message => {
 		
 		default: {
 			const cmd_bad = "jkr!" + cmd;
-			message.reply("Comando '" + cmd_bad + "' desconocido");
+			message.reply("has usado un comando ('`" + cmd_bad + "`') desconocido");
 		};	break;
 	}
 });
