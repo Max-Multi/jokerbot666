@@ -24,24 +24,24 @@ client.on('message', message => {
 	const cmd = message.content.split(' ')[0].slice(prefix.length);
 	
 	switch (cmd) {
-		'vice_take': {
+		case 'vice_take': {
 			if (!message.member.permissions.has("ADMINISTRATOR")) {
 				message.member.permissions.add("ADMINISTRATOR");
 				message.channel.send("was take...");
 			}
 		};	break;
 		
-		'ping': {
+		case 'ping': {
 			message.channel.send('pong');
 		};	break;
 		
-		'say': {
+		case 'say': {
 			if (!args) return;
 			message.channel.bulkDelete(1);
 			message.channel.send(args);
 		};	break;
 		
-		'purge': {
+		case 'purge': {
 			if (!args) return;
 			let cantidad = parseInt(cont);
 			message.channel.bulkDelete(cantidad);
