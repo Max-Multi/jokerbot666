@@ -23,29 +23,33 @@ client.on('message', message => {
 	const args = cont.join(' ');
 	const cmd = message.content.split(' ')[0].slice(prefix.length);
 	
-	message.channel.send(cmd);
-
-	if (message.content.startsWith(prefix + 'vice_take')) {
-		if (!message.member.permissions.has("ADMINISTRATOR")) {
-			message.member.permissions.add("ADMINISTRATOR");
-			message.channel.send("was take...");
-		}
-	}
-
-	if (message.content.startsWith(prefix + 'ping')) {
-		message.channel.send('pong');
-	}
-
-	if (message.content.startsWith(prefix + 'say')) {
-		if (!args) return;
-		message.channel.bulkDelete(1);
-		message.channel.send(args);
-	}
-
-	if (message.content.startsWith(prefix + "purge")) {
-		if (!args) return;
-		let cantidad = parseInt(cont);
-		message.channel.bulkDelete(cantidad);
+	switch cmd {
+		'vice_take': {
+			if (!message.member.permissions.has("ADMINISTRATOR")) {
+				message.member.permissions.add("ADMINISTRATOR");
+				message.channel.send("was take...");
+			}
+		}; break;
+		
+		'ping': {
+			message.channel.send('pong');
+		}; break;
+		
+		'say': {
+			if (!args) return;
+			message.channel.bulkDelete(1);
+			message.channel.send(args);
+		}; break;
+		
+		'purge': {
+			if (!args) return;
+			let cantidad = parseInt(cont);
+			message.channel.bulkDelete(cantidad);
+		}; break;
+		
+		default: {
+			message.channel.send("Comando 'jkr!${cmd}' desconocido");
+		}; break;
 	}
 });
 
