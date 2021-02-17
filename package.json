@@ -2,14 +2,14 @@
   "name": "jokerbot666",
   "version": "0.1.0",
   "description": "Mi propio bot de discord, para echar broma XD ",
-  "main": "main.js",
+  "main": "src/main.js",
   "engines": {
     "node": "8.x",
     "npm": "*"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node main.js"
+    "start": "node src/main.js"
   },
   "repository": {
     "type": "git",

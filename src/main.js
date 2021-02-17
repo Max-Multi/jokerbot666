@@ -8,7 +8,10 @@ client.on('ready', () => {
 	console.log('Listo!');
 });
 
+// Prefijo usado por el bot
 const prefix = "jkr!";
+
+// Username con tag de la persona que solo puede usar este bot
 const username = "StunxFS#8549";
 
 client.on('message', message => {
@@ -25,17 +28,17 @@ client.on('message', message => {
 	const cmd = content_split[0].slice(prefix.length);
 	
 	switch (cmd) {
-		case 'vice_take': {
+		/*case 'vice_take': {
 			if (!message.member.permissions.has("ADMINISTRATOR")) {
 				message.member.permissions.add("ADMINISTRATOR");
 				message.channel.send("was take...");
 			}
-		};	break;
+		};	break;*/
 		
 		case 'ping': {
 			message.channel.send('pong');
 		};	break;
-		
+
 		case 'say': {
 			if (!args) return;
 			message.channel.bulkDelete(1);
