@@ -58,7 +58,7 @@ client.on('message', message => {
 		
 		default: {
 			const cmd_bad = "jkr!" + cmd;
-			message.channel.send("Comando '" + cmd_bad + "' desconocido");
+			message.reply("Comando '" + cmd_bad + "' desconocido");
 		};	break;
 	}
 });
