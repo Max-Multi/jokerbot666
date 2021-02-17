@@ -35,11 +35,13 @@ client.on('message', message => {
             message.channel.send(args);
     }*/
     
-    /*if (message.content.startsWith(prefix+ "purge")) {
+    if (message.author.username == "StunxFS" && message.content.startsWith(prefix + "purge")) {
     	if (!args) return;
 		let cantidad = parseInt(args[0]);
 		message.channel.bulkDelete(cantidad);
-	}*/
+	} else {
+		message.channel.send('No eres StunxFS :/');
+	}
 });
 
 client.login(process.env.TOKEN);
