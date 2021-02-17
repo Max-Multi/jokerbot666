@@ -17,7 +17,8 @@ client.on('message', message => {
         return;
     }
     
-    const args = message.content.split(' ').slice(1);
+	const cont = message.content.split(' ').slice(1);
+    const args = message.content.split(' ');
     
     if (message.content.startsWith(prefix + 'vice_take')) {
 	if (!message.member.permissions.has("ADMINISTRATOR")) {
@@ -38,7 +39,7 @@ client.on('message', message => {
     
     if (message.content.startsWith(prefix + "purge")) {
     	if (!args) return;
-	let cantidad = parseInt(args[0]);
+	let cantidad = parseInt(cont);
 	message.channel.bulkDelete(cantidad);
     }
 });
