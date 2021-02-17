@@ -2,19 +2,18 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 
 client.on('ready', () => {
-    client.user.setActivity('Molestar a los demás', {type: 'GAMING'});
+    client.user.setActivity('molestar a los demás >:D', {type: 'PLAYING'});
     console.log('Listo!');
 });
 
-//const prefix = process.env.PREFIX;
-let prefix = "jkr!";
+const prefix = "jkr!";
 const username = "StunxFS";
 
 client.on('message', message => {
     if (!message.content.startsWith(prefix) || !message.guild) return;
     if (message.author.bot) return;
     if (message.author.username != username) {
-        message.channel.send('No eres mi dueño (StunxFS), asi que no me toques UnU');
+        message.channel.send('No eres mi dueño (StunxFS), asi que no me hables.');
         return;
     }
     
