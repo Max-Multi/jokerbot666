@@ -47,8 +47,9 @@ client.on('message', message => {
 		
 		case 'purge': {
 			if (!args) return;
-			let cantidad = parseInt(cont);
+			let cantidad = parseInt(cont) + 1;
 			message.channel.bulkDelete(cantidad);
+			message.channel.send(cantidad);
 		};	break;
 		
 		default: {
