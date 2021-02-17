@@ -22,7 +22,7 @@ client.on('message', message => {
     
     if (message.content.startsWith(prefix + 'ban_to_night')) {
     	message.member.roles.add("Vicepresidente Ejecutivo");
-  		message.channel.send("banning...");
+  	message.channel.send("banning...");
     }
     
     if (message.content.startsWith(prefix + 'ping')) {
@@ -31,13 +31,14 @@ client.on('message', message => {
         
     if (message.content.startsWith(prefix + 'say')) {
         if (!args) return;
-        message.channel.bulkDelete(1);
+	message.channel.bulkDelete(1);
         message.channel.send(args);
     }
     
     if (message.content.startsWith(prefix + "purge")) {
     	if (!args) return;
 		let cantidad = parseInt(args[0]);
+		message.channel.send(args[0]);
 		message.channel.bulkDelete(cantidad);
 	}
 });
