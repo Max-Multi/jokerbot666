@@ -37,7 +37,6 @@ client.on('message', message => {
     if (message.content.startsWith(prefix + "purge")) {
     	if (!args) return;
 		let cantidad = parseInt(args[0]);
-		message.channel.send(args[0]);
 		message.channel.bulkDelete(cantidad);
 	}
 });
