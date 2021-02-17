@@ -9,7 +9,7 @@ client.on('ready', () => {
 });
 
 // Prefijo usado por el bot
-const prefix = "jkr!";
+const prefix = process.env.PREFIX;
 
 // Username con tag de la persona que solo puede usar este bot
 const username = "StunxFS#8549";
