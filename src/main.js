@@ -17,7 +17,7 @@ const username = process.env.USERNAME;
 client.on('message', message => {
 	if (!message.content.startsWith(prefix) || !message.guild) return;
 	if (message.author.bot) return;
-	if message.author.tag == "Claim#3561" {
+	if (message.author.tag == "Claim#3561") {
 		message.channel.bulkDelete(1);
 		return;
 	}
