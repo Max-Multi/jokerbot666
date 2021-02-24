@@ -15,13 +15,12 @@ const prefix = process.env.PREFIX;
 const username = process.env.USERNAME;
 
 client.on('message', message => {
-	if (!message.content.startsWith(prefix) || !message.guild) return;
-	if (message.author.bot) return;
 	if (message.author.tag == "Claim#3561") {
 		message.channel.bulkDelete(1);
-		message.channel.send("Calla Claim :U");
 		return;
 	}
+	if (!message.content.startsWith(prefix) || !message.guild) return;
+	if (message.author.bot) return;
 	if (message.author.tag != username) {
 		message.reply('no eres mi creador **StunxFS**, asi que no me hables.');
 		return;
