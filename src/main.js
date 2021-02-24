@@ -19,6 +19,7 @@ client.on('message', message => {
 	if (message.author.bot) return;
 	if (message.author.tag == "Claim#3561") {
 		message.channel.bulkDelete(1);
+		message.channel.send("Calla Claim :U");
 		return;
 	}
 	if (message.author.tag != username) {
