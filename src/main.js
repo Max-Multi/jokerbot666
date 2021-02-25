@@ -14,6 +14,10 @@ const prefix = process.env.PREFIX;
 // Username con tag de la persona que solo puede usar este bot
 const username = process.env.USERNAME;
 
+// Variable usada para contener a los "muteados"
+// NB: Esta forma es la más fea y anticuada que existe.
+let muteds = [];
+
 client.on('message', message => {
 	if (message.author.tag == "Claim#3561") {
 		message.channel.bulkDelete(1);
@@ -59,6 +63,10 @@ client.on('message', message => {
 			let cantidad = parseInt(cont) + 1;
 			message.channel.bulkDelete(cantidad);
 		};	break;
+			
+		case 'muted': {
+			// TODO
+		}; break;
 		
 		default: {
 			const cmd_bad = "jkr!" + cmd;
