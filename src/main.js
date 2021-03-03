@@ -68,6 +68,14 @@ client.on('message', message => {
 			if (!args) return;
 			muteds.push(args[0]);
 		}; break;
+			
+		case 'unmuted': {
+			if (!args) return;
+			let i = muteds.indexOf(args[0]);
+			if (i > -1) {
+				muteds.splices(i, 1);
+			}
+		}; break;
 		
 		default: {
 			const cmd_bad = "jkr!" + cmd;
