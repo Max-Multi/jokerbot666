@@ -66,19 +66,19 @@ client.on('message', message => {
 			
 		case 'mute': {
 			if (!args) return;
-			let i = muteds.indexOf(args[0]);
+			let i = muteds.indexOf(args);
 			if (i == -1) {
-				muteds.push(args[0]);
-				message.reply(args[0] + " fue muteado");
+				muteds.push(args);
+				message.reply(args + " fue muteado");
 			}
 		}; break;
 			
 		case 'unmute': {
 			if (!args) return;
-			let i = muteds.indexOf(args[0]);
+			let i = muteds.indexOf(args);
 			if (i > -1) {
 				muteds.splices(i, 1);
-				message.reply(args[0] + " fue desmuteado");
+				message.reply(args + " fue desmuteado");
 			}
 		}; break;
 		
