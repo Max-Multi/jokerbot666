@@ -19,7 +19,7 @@ const username = process.env.USERNAME;
 let muteds = [];
 
 client.on('message', message => {
-	if (message.author.tag == "Claim#3561") {
+	if (muteds.indexOf(message.author.tag) > -1) {
 		message.channel.bulkDelete(1);
 		return;
 	}
