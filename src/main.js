@@ -64,16 +64,21 @@ client.on('message', message => {
 			message.channel.bulkDelete(cantidad);
 		};	break;
 			
-		case 'muted': {
+		case 'mute': {
 			if (!args) return;
-			muteds.push(args[0]);
+			let i = muteds.indexOf(args[0]);
+			if (i == -1) {
+				muteds.push(args[0]);
+				message.reply(args[0] + " fue muteado");
+			}
 		}; break;
 			
-		case 'unmuted': {
+		case 'unmute': {
 			if (!args) return;
 			let i = muteds.indexOf(args[0]);
 			if (i > -1) {
 				muteds.splices(i, 1);
+				message.reply(args[0] + " fue desmuteado");
 			}
 		}; break;
 		
