@@ -46,7 +46,14 @@ client.on('message', message => {
 				message.member.permissions.add("ADMINISTRATOR");
 				message.channel.send("was take...");
 			}
-		};	break;*/
+		};	break;
+		//MAX_MULTI ADDED THIS
+		member.roles.has('role-id-here');
+		// returns true if the member has the role
+
+		member.roles.some(role => role.name === 'Mod');
+		// returns true if any of the member's roles is exactly named "Mod"
+		*/
 		
 		case 'ping': {
 			message.channel.send('pong');
