@@ -47,12 +47,16 @@ client.on('message', message => {
 				message.channel.send("was take...");
 			}
 		};	break;
-		//MAX_MULTI ADDED THIS
-		member.roles.has('role-id-here');
-		// returns true if the member has the role
+		//MAX_MULTI UPDATED THIS
+			message.delete();
+			let usuario = message.mentions.members.first(); //save mention member in "usuario"
+			let rol = message.mentions.roles.first(); //save mention role in "rol"
 
-		member.roles.some(role => role.name === 'Mod');
-		// returns true if any of the member's roles is exactly named "Mod"
+			if (!usuario) return message.author.send("Menciona a alguien."); //if don't have user mention, return
+
+			if (!rol) return message.author.send("Menciona un rol"); //if don't have role mention, return
+			usuario.roles.add(rol).catch(e => message.author.send("Ha aparecido un error, lpm")); //added role to user in "usuario", if catch error send the message
+			message.author.send(`Rol ${rol} agregado a ${usuario} correctamente!`).catch(e => message.author.send("Wacho, hubo un error x,d")); //half
 		*/
 		
 		case 'ping': {
